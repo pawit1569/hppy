@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff6ec4, #7873f5 );
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3em;
+            color: #f7f7f7;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        .cake-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .cake {
+            width: 200px;
+            height: 100px;
+            background: #ffcc80;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            box-shadow: 0 5px 0 #e69500;
+        }
+        .cake::before {
+            content: "";
+            width: 220px;
+            height: 30px;
+            background: #e69500;
+            position: absolute;
+            bottom: -20px;
+            left: -10px;
+            border-radius: 5px;
+        }
+        .candles {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+        }
+        .candle {
+            width: 10px;
+            height: 40px;
+            background: red;
+            border-radius: 3px;
+            position: relative;
+        }
+        .flame {
+            width: 10px;
+            height: 15px;
+            background: orange;
+            border-radius: 50%;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: flicker 0.5s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { opacity: 1; transform: translateX(-50%) scale(1); }
+            100% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
+        }
+        .btn {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff4081, #ff80ab);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 happy birthday คุณพ่อ
+      
+    </h1>
+    <br>                        
+    <br>
+    <br>
+    <div class="cake-container">
+        <div class="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+        </div>
+        <div class="cake"></div>
+    </div>
+    <button class="btn" onclick="blowCandles()">🎂 เป่าเทียน 🎂</button>
+    <script>
+        function blowCandles() {
+            let flames = document.querySelectorAll('.flame');
+            flames.forEach(flame => flame.style.display = 'none');
+            setTimeout(() => {
+                window.location.href = "2.html";
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

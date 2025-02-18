@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Download Loader</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff6ec4, #7873f5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 50px;
+      height: 70px;
+      background: radial-gradient(circle at 30% 30%, #ff0000, #1100ff);
+      border-radius: 50% 50% 50% 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+    h1 {
+      color: white;
+      font-size: 2.5rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-bottom: 20px;
+    }
+    .progress-container {
+      width: 80%;
+      background-color: #eee;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .progress-bar {
+      height: 25px;
+      background: linear-gradient(90deg, #ff7f50, #ff1493);
+      width: 0;
+      animation: load 5s linear forwards;
+    }
+    @keyframes load {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>กำลังดาวน์โหลด... สุขสันต์วันเกิด!</h1>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <script>
+    for (let i = 0; i < 10; i++) {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      balloon.style.left = `${Math.random() * 100}%`;
+      balloon.style.animationDuration = `${4 + Math.random() * 3}s`;
+      document.body.appendChild(balloon);
+    }
+
+    // Redirect after progress is complete
+    const progressBar = document.querySelector('.progress-bar');
+    progressBar.addEventListener('animationend', () => {
+      window.location.href = '44.html'; // Change 'nextPage.html' to your desired page
+    });
+  </script>
+</body>
+</html>

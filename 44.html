@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body class="bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 min-h-screen font-['Kanit']">
+    <!-- Floating Balloons -->
+    <div class="fixed w-full h-full pointer-events-none">
+        <div class="balloon-animation">🎈</div>
+        <div class="balloon-animation delay-1">🎈</div>
+        <div class="balloon-animation delay-2">🎈</div>
+        <div class="balloon-animation delay-3">🎈</div>
+        <div class="balloon-animation delay-4">🎈</div>
+        <div class="balloon-animation delay-5">🎈</div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <h1 class="text-6xl font-['Sriracha'] text-center text-white mb-8 animate__animated animate__bounceIn">
+            🎂 สุขสันต์วันเกิด! 🎂
+        </h1>
+        
+        <p class="text-2xl text-center text-white mb-12 animate__animated animate__fadeIn animate__delay-1s">
+            ขอให้มีความสุขมากๆ นะครับ ❤️<br>
+            ขอให้สุขภาพแข็งแรง ร่ำรวยเงินทอง มีแต่สิ่งดีๆ เข้ามาในชีวิต
+        </p>
+
+        <!-- Fireworks Canvas -->
+        <canvas id="fireworks" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-2">
+                <img src="200732.jpg" alt="Birthday Memory 1" class="w-full h-72 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p class="text-white text-xl font-['Sriracha']">ความทรงจำแสนพิเศษ ✨</p>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-2">
+                <img src="200734.jpg" alt="Birthday Memory 2" class="w-full h-72 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p class="text-white text-xl font-['Sriracha']">ช่วงเวลาแห่งความสุข 🌟</p>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-2">
+                <img src="200735.jpg" alt="Birthday Memory 3" class="w-full h-72 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p class="text-white text-xl font-['Sriracha']">รอยยิ้มแห่งความสุข 😊</p>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-2">
+                <img src="200736.jpg" alt="Birthday Memory 4" class="w-full h-72 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p class="text-white text-xl font-['Sriracha']">มิตรภาพที่งดงาม 🤝</p>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-2">
+                <img src="200737.jpg" alt="Birthday Memory 5" class="w-full h-72 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p class="text-white text-xl font-['Sriracha']">ความประทับใจไม่รู้ลืม 💝</p>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-2">
+                <img src="S__22396955.jpg" alt="Birthday Memory 5" class="w-full h-72 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p class="text-white text-xl font-['Sriracha']">ความประทับใจไม่รู้ลืม 💝</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Birthday Wish Section -->
+        <div class="mt-16 text-center">
+            <h2 class="text-4xl font-['Sriracha'] text-white mb-6 animate__animated animate__fadeInUp">
+                🎁 คำอวยพรพิเศษ
+            </h2>
+            <p class="text-xl text-white leading-relaxed max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">
+                ขอให้วันเกิดปีนี้เป็นวันที่พิเศษ<br>
+                เต็มไปด้วยความสุข ความสำเร็จ และรอยยิ้ม<br>
+                ขอให้พ่อมีความสุข และมีแต่สิ่งดีๆ เข้ามาในชีวิต 💫<br>
+                ขอให้มีความสุขกาย สุขใจ มีเงินทองใช้ไม่ขาดมือ<br>
+                สมหวังในทุกสิ่งที่ปรารถนา 🙏✨
+            </p>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="fixed inset-0 bg-black/95 hidden items-center justify-center z-50">
+            <button class="absolute top-4 right-4 text-white text-5xl hover:text-pink-500 transition-colors">&times;</button>
+            <img src="" alt="Enlarged photo" class="max-w-[90%] max-h-[90vh] rounded-lg shadow-2xl">
+            <div class="absolute bottom-8 left-0 right-0 text-center">
+                <p class="text-white text-xl font-['Sriracha']">✨ ภาพแห่งความทรงจำ ✨</p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .balloon-animation {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 15s linear infinite;
+            opacity: 0.7;
+        }
+        .delay-1 { animation-delay: 2s; left: 20%; }
+        .delay-2 { animation-delay: 4s; left: 40%; }
+        .delay-3 { animation-delay: 6s; left: 60%; }
+        .delay-4 { animation-delay: 8s; left: 80%; }
+        .delay-5 { animation-delay: 10s; left: 90%; }
+        
+        @keyframes float {
+            0% { bottom: -20px; transform: translateX(0) rotate(0); }
+            50% { transform: translateX(100px) rotate(10deg); }
+            100% { bottom: 100vh; transform: translateX(-100px) rotate(-10deg); }
+        }
+
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+            animation: sparkle 1.5s linear forwards;
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1) rotate(180deg); opacity: 1; }
+            100% { transform: scale(0) rotate(360deg); opacity: 0; }
+        }
+    </style>
+
+    <script>
+        // Enhanced Fireworks Effect
+        const canvas = document.getElementById("fireworks");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        class Particle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.velocity = {
+                    x: -2 + Math.random() * 4,
+                    y: -2 + Math.random() * 4
+                };
+                this.alpha = 1;
+                this.decay = 0.015;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+
+            update() {
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.alpha -= this.decay;
+            }
+        }
+
+        let particles = [];
+
+        function createFirework(x, y, color) {
+            const particleCount = 100;
+            for(let i = 0; i < particleCount; i++) {
+                particles.push(new Particle(x, y, color));
+            }
+        }
+
+        function animate() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            particles = particles.filter(particle => particle.alpha > 0);
+            particles.forEach(particle => {
+                particle.draw();
+                particle.update();
+            });
+
+            if(Math.random() < 0.03) {
+                const colors = ['#FF69B4', '#FFD700', '#FF1493', '#00FFFF', '#FF4500'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                createFirework(
+                    Math.random() * canvas.width,
+                    Math.random() * canvas.height * 0.6 + canvas.height * 0.4,
+                    color
+                );
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Enhanced Modal Functionality with Sparkle Effect
+        const modal = document.getElementById('modal');
+        const modalImg = modal.querySelector('img');
+        const closeBtn = modal.querySelector('button');
+        const galleryImages = document.querySelectorAll('.group img');
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            sparkle.innerHTML = '✨';
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 1500);
+        }
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', (e) => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                modalImg.src = img.src;
+                
+                // Create sparkle effect
+                for(let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        createSparkle(
+                            e.clientX + (Math.random() - 0.5) * 100,
+                            e.clientY + (Math.random() - 0.5) * 100
+                        );
+                    }, i * 200);
+                }
+
+                // Create special fireworks effect
+                const colors = ['#FF69B4', '#FFD700', '#FF1493', '#00FFFF', '#FF4500'];
+                for(let i = 0; i < 8; i++) {
+                    setTimeout(() => {
+                        const color = colors[Math.floor(Math.random() * colors.length)];
+                        createFirework(
+                            Math.random() * canvas.width,
+                            canvas.height - 100,
+                            color
+                        );
+                    }, i * 300);
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        // Auto create fireworks every few seconds
+        setInterval(() => {
+            const colors = ['#FF69B4', '#FFD700', '#FF1493', '#00FFFF', '#FF4500'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            createFirework(
+                Math.random() * canvas.width,
+                canvas.height - 100,
+                color
+            );
+        }, 2000);
+    </script>
+
+</body>
+</html>
